@@ -1,0 +1,76 @@
+<link rel="stylesheet" href="../css/style.css">
+<script src="../js/script.js" defer></script>
+
+<section class="luxury-application">
+
+<div class="application-container">
+
+<h2>Private Project Application</h2>
+<p class="subtitle">Complete the application to begin your digital transformation.</p>
+
+<div class="progress-bar">
+<div class="progress"></div>
+</div>
+
+<form id="multiStepForm">
+
+<!-- STEP 1 -->
+<div class="form-step active">
+<h3>About You</h3>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<select id="country" required>
+<option value="">Select Country</option>
+</select>
+
+<button type="button" class="next">Continue</button>
+</div>
+
+
+<!-- STEP 2 -->
+<div class="form-step">
+<h3>Your Project</h3>
+
+<select required>
+<option value="">Project Type</option>
+<option>Luxury Restaurant</option>
+<option>Real Estate</option>
+<option>Corporate</option>
+<option>E-commerce</option>
+<option>Personal Brand</option>
+</select>
+
+<textarea placeholder="Describe your vision"></textarea>
+
+<button type="button" class="prev">Back</button>
+<button type="button" class="next">Continue</button>
+
+</div>
+
+
+<!-- STEP 3 -->
+<div class="form-step">
+<h3>Investment Range</h3>
+
+<input type="number" id="budgetLocal" placeholder="Budget (Your Currency)">
+
+<select id="currency">
+<option value="USD">USD</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+<option value="KES">KES</option>
+</select>
+
+<p class="usdPreview">≈ $0 USD</p>
+
+<button type="button" class="prev">Back</button>
+<button type="submit" class="submitBtn">Submit Application</button>
+
+</div>
+
+</form>
+</div>
+  </section>
