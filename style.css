@@ -184,3 +184,76 @@ box-shadow:0 10px 30px rgba(212,175,55,0.3);
 }  
   
 }
+
+.luxury-application{
+background:#050505;
+color:white;
+padding:120px 20px;
+font-family:serif;
+}
+
+.application-container{
+max-width:700px;
+margin:auto;
+background:#0b0b0b;
+padding:60px;
+border-radius:14px;
+border:1px solid rgba(255,215,0,0.2);
+}
+
+h2{
+font-size:42px;
+color:#d4af37;
+margin-bottom:10px;
+}
+
+.subtitle{
+opacity:0.7;
+margin-bottom:40px;
+}
+
+input,select,textarea{
+width:100%;
+padding:16px;
+margin-bottom:18px;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:6px;
+}
+
+button{
+padding:14px 28px;
+background:#d4af37;
+border:none;
+color:black;
+cursor:pointer;
+border-radius:4px;
+}
+
+.prev{
+background:transparent;
+border:1px solid #555;
+color:white;
+}
+
+.progress-bar{
+height:4px;
+background:#222;
+margin-bottom:40px;
+}
+
+.progress{
+height:4px;
+background:#d4af37;
+width:33%;
+transition:0.4s;
+}
+
+.form-step{
+display:none;
+}
+
+.form-step.active{
+display:block;
+  }
