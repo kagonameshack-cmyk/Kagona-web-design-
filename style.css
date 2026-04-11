@@ -59,6 +59,10 @@ justify-content:space-between;
 width:100%;
 }
 
+.hero {
+    padding-top: 140px;
+}
+
 /* TEXT SIDE */
 
 .hero-text{
