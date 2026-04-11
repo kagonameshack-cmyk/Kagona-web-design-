@@ -167,24 +167,6 @@ margin-top:40px;
 justify-content:center;
 }
 
-.hero-visual{
-margin-top:60px;
-}  
-
-.hero-visual img{
-width:600px;
-border-radius:8px;
-box-shadow:0 30px 80px rgba(0,0,0,0.8);
-filter:brightness(0.9);
-}  
-
-.btn-primary:hover{
-transform:translateY(-2px);
-box-shadow:0 10px 30px rgba(212,175,55,0.3);
-}  
-  
-}
-
 .luxury-application{
 background:#050505;
 color:white;
@@ -257,3 +239,5 @@ display:none;
 .form-step.active{
 display:block;
   }
+  
+}
