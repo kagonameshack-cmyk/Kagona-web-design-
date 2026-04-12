@@ -51,6 +51,8 @@ countrySelect.appendChild(option);
 });
 
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const rates = {
 USD:1,
 EUR:1.08,
@@ -78,3 +80,5 @@ budgetInput.addEventListener("input", convert);
 currencySelect.addEventListener("change", convert);
 
 convert();
+
+});
