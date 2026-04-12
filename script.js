@@ -58,7 +58,7 @@ GBP:1.25,
 KES:0.0078
 };
 
-const budgetInput = document.getElementById("budgetLocal");
+const budgetInput = document.getElementById("budget");
 const currencySelect = document.getElementById("currency");
 const preview = document.querySelector(".usdPreview");
 
