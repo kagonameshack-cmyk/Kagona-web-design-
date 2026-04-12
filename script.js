@@ -82,3 +82,33 @@ currencySelect.addEventListener("change", convert);
 convert();
 
 });
+
+
+// UPDATE REVIEW PAGE
+
+function updateReview(){
+
+document.getElementById("reviewProject").innerText =
+document.getElementById("projectType").value;
+
+document.getElementById("reviewName").innerText =
+document.getElementById("fullName").value;
+
+document.getElementById("reviewEmail").innerText =
+document.getElementById("email").value;
+
+document.getElementById("reviewCountry").innerText =
+document.getElementById("country").value;
+
+document.getElementById("reviewBudget").innerText =
+document.getElementById("budget").value + " " +
+document.getElementById("currency").value;
+
+document.getElementById("reviewTimeline").innerText =
+document.getElementById("timeline").value;
+
+}
+
+document.querySelectorAll(".next").forEach(btn=>{
+btn.addEventListener("click",updateReview);
+});
