@@ -9,82 +9,200 @@
 <title>Private Project Application</title>
 
 <link rel="stylesheet" href="../style.css">
+<script defer src="../script.js"></script>
 
 </head>
 
-<body>
+<body class="application-page">
 
 <section class="luxury-application">
 
-<div class="application-container">
+<div class="app-wrapper">
 
-<h2>Private Project Application</h2>
-<p class="subtitle">Complete the application to begin your digital transformation.</p>
+<h1 class="app-title">
+Private Project Application
+</h1>
 
-<div class="progress-bar">
-<div class="progress"></div>
+<p class="app-subtitle">
+Complete this short application to begin your digital transformation.
+</p>
+
+<!-- Progress -->
+
+<div class="progress-container">
+
+<div class="progress-line"></div>
+
+<div class="step active">1</div>
+<div class="step">2</div>
+<div class="step">3</div>
+<div class="step">4</div>
+<div class="step">5</div>
+
 </div>
 
-<form id="multiStepForm">
+
+<form id="luxuryForm">
+
 
 <!-- STEP 1 -->
+
 <div class="form-step active">
 
-<h3>About You</h3>
+<h2>Introduction</h2>
+
+<select required>
+
+<option value="">Project Type</option>
+
+<option>Luxury Restaurant Website</option>
+<option>Real Estate Website</option>
+<option>Corporate Brand Website</option>
+<option>E-commerce Platform</option>
+<option>Custom Web Platform</option>
+<option>Other</option>
+
+</select>
+
+<textarea
+placeholder="Tell us briefly about your project vision">
+</textarea>
+
+<div class="form-nav">
+
+<button type="button" class="next">
+Next
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- STEP 2 -->
+
+<div class="form-step">
+
+<h2>Contact Details</h2>
 
 <input type="text" placeholder="Full Name" required>
 
 <input type="email" placeholder="Email Address" required>
 
-<select id="country" required>
-<option value="">Select Country</option>
-</select>
+<input type="text" placeholder="Company Name">
 
-<button type="button" class="next">Continue</button>
+<input type="tel" placeholder="Phone Number">
 
-</div>
-
-<!-- STEP 2 -->
-<div class="form-step">
-
-<h3>Your Project</h3>
-
-<select required>
-<option value="">Project Type</option>
-<option>Luxury Restaurant</option>
-<option>Real Estate</option>
-<option>Corporate</option>
-<option>E-commerce</option>
-<option>Personal Brand</option>
-</select>
-
-<textarea placeholder="Describe your vision"></textarea>
+<div class="form-nav">
 
 <button type="button" class="prev">Back</button>
-<button type="button" class="next">Continue</button>
+
+<button type="button" class="next">Next</button>
 
 </div>
+
+</div>
+
+
 
 <!-- STEP 3 -->
+
 <div class="form-step">
 
-<h3>Investment Range</h3>
+<h2>Country</h2>
 
-<input type="number" id="budgetLocal" placeholder="Budget (Your Currency)">
+<select id="country">
 
-<select id="currency">
-<option value="USD">USD</option>
-<option value="EUR">EUR</option>
-<option value="GBP">GBP</option>
-<option value="KES">KES</option>
+<option>Kenya</option>
+<option>United States</option>
+<option>United Kingdom</option>
+<option>Australia</option>
+<option>Canada</option>
+
 </select>
 
-<p class="usdPreview">≈ $0 USD</p>
+<div class="form-nav">
 
 <button type="button" class="prev">Back</button>
-<button type="submit" class="submitBtn">Submit Application</button>
+
+<button type="button" class="next">Next</button>
 
 </div>
+
+</div>
+
+
+
+<!-- STEP 4 -->
+
+<div class="form-step">
+
+<h2>Budget & Timeline</h2>
+
+<input id="budget" type="number" placeholder="Project Budget">
+
+<select id="currency">
+
+<option value="USD">USD</option>
+<option value="KES">KES</option>
+<option value="EUR">EUR</option>
+<option value="GBP">GBP</option>
+
+</select>
+
+<p class="usdPreview">
+≈ $0 USD
+</p>
+
+<select>
+
+<option value="">Project Timeline</option>
+
+<option>ASAP</option>
+<option>1–2 Months</option>
+<option>3–6 Months</option>
+<option>Flexible</option>
+
+</select>
+
+<div class="form-nav">
+
+<button type="button" class="prev">Back</button>
+
+<button type="button" class="next">Next</button>
+
+</div>
+
+</div>
+
+
+
+<!-- STEP 5 -->
+
+<div class="form-step">
+
+<h2>Final Review</h2>
+
+<p class="review-text">
+
+Please review your information before submitting your application.
+
+</p>
+
+<div class="form-nav">
+
+<button type="button" class="prev">Back</button>
+
+<button type="submit" class="submitBtn">
+Submit Application
+</button>
+
+</div>
+
+</div>
+
+
 
 </form>
 
@@ -92,7 +210,6 @@
 
 </section>
 
-<script src="../script.js"></script>
-
 </body>
+
   </html>
