@@ -420,3 +420,7 @@ color:#fff;
 font-size:15px;
 
     }
+
+#timeline:focus{
+border-color:#C8A96A;
+}
