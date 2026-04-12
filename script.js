@@ -63,13 +63,18 @@ const currencySelect = document.getElementById("currency");
 const preview = document.querySelector(".usdPreview");
 
 function convert(){
-let amount = budgetInput.value;
+
+let amount = parseFloat(budgetInput.value) || 0;
+
 let currency = currencySelect.value;
 
 let usd = amount * rates[currency];
 
 preview.innerText = "≈ $" + usd.toFixed(2) + " USD";
+
 }
 
-budgetInput.addEventListener("input",convert);
-currencySelect.addEventListener("change",convert);
+budgetInput.addEventListener("input", convert);
+currencySelect.addEventListener("change", convert);
+
+convert();
