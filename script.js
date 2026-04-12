@@ -1,68 +1,33 @@
 const steps = document.querySelectorAll(".form-step");
 const nextBtns = document.querySelectorAll(".next");
 const prevBtns = document.querySelectorAll(".prev");
-const progress = document.querySelector(".progress");
 
-let currentStep = 0;
+let current = 0;
 
-nextBtns.forEach(btn=>{
-btn.addEventListener("click",()=>{
-steps[currentStep].classList.remove("active");
-currentStep++;
-steps[currentStep].classList.add("active");
-updateProgress();
-});
-});
+nextBtns.forEach(btn => {
 
-prevBtns.forEach(btn=>{
-btn.addEventListener("click",()=>{
-steps[currentStep].classList.remove("active");
-currentStep--;
-steps[currentStep].classList.add("active");
-updateProgress();
-});
+btn.addEventListener("click", () => {
+
+steps[current].classList.remove("active");
+
+current++;
+
+steps[current].classList.add("active");
+
 });
 
-function updateProgress(){
-progress.style.width = ((currentStep+1)/steps.length)*100+"%";
-}
-
-const countries = [
-"Argentina","Australia","Austria","Belgium","Brazil","Canada","China",
-"Denmark","Finland","France","Germany","India","Italy","Japan",
-"Kenya","Mexico","Netherlands","Norway","Portugal","Qatar",
-"Saudi Arabia","Singapore","South Africa","Spain","Sweden",
-"Switzerland","UAE","United Kingdom","United States"
-];
-
-const countrySelect = document.getElementById("country");
-
-countries.sort().forEach(country=>{
-let option = document.createElement("option");
-option.value = country;
-option.textContent = country;
-countrySelect.appendChild(option);
 });
 
-const rates = {
-USD:1,
-EUR:1.08,
-GBP:1.25,
-KES:0.0078
-};
+prevBtns.forEach(btn => {
 
-const budgetInput = document.getElementById("budgetLocal");
-const currencySelect = document.getElementById("currency");
-const preview = document.querySelector(".usdPreview");
+btn.addEventListener("click", () => {
 
-function convert(){
-let amount = budgetInput.value;
-let currency = currencySelect.value;
+steps[current].classList.remove("active");
 
-let usd = amount * rates[currency];
+current--;
 
-preview.innerText = "≈ $" + usd.toFixed(2) + " USD";
-}
+steps[current].classList.add("active");
 
-budgetInput.addEventListener("input",convert);
-currencySelect.addEventListener("change",convert);
+});
+
+});
