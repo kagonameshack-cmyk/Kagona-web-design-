@@ -382,3 +382,41 @@ color:#C8A96A;
 font-weight:600;
 margin-top:10px;
     }
+
+/* REVIEW CARDS */
+
+.review-card{
+
+background: rgba(255,255,255,0.04);
+
+border:1px solid rgba(255,255,255,0.08);
+
+padding:18px;
+
+border-radius:12px;
+
+margin-top:12px;
+
+backdrop-filter: blur(8px);
+
+}
+
+.review-card h4{
+
+color:#C8A96A;
+
+font-size:13px;
+
+margin-bottom:4px;
+
+letter-spacing:1px;
+
+}
+
+.review-card p{
+
+color:#fff;
+
+font-size:15px;
+
+    }
