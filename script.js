@@ -122,9 +122,3 @@ window.location.href = "success.html";
 
 // HAMBURGER MENU (FULLY WORKING)
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
-
-hamburger.onclick = function(){
-menu.classList.toggle("active");
-};
