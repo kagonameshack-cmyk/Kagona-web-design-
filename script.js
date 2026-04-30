@@ -120,11 +120,18 @@ e.preventDefault();
 window.location.href = "success.html";
 });
 
-// HAMBURGER MENU (FULLY WORKING)
 
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 
-hamburger.onclick = function(){
-menu.classList.toggle("active");
-};
+hamburger.addEventListener("click", function(){
+  menu.classList.toggle("active");
+  hamburger.classList.toggle("active");
+});
+
+document.querySelectorAll(".menu-overlay a").forEach(link=>{
+  link.addEventListener("click", ()=>{
+    menu.classList.remove("active");
+    hamburger.classList.remove("active");
+  });
+});
