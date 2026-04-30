@@ -141,3 +141,6 @@ document.querySelectorAll(".menu-overlay a").forEach(link=>{
 });
 
       }
+document.getElementById("hamburger").onclick = function(){
+  alert("clicked");
+  }
