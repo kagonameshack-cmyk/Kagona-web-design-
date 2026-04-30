@@ -122,8 +122,12 @@ window.location.href = "success.html";
 
 // HAMBURGER MENU
 
+document.addEventListener("DOMContentLoaded", function(){
+
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
+
+if(hamburger && menu){
 
 hamburger.addEventListener("click", () => {
 menu.classList.toggle("active");
@@ -133,4 +137,8 @@ document.querySelectorAll(".menu-overlay a").forEach(link=>{
 link.addEventListener("click",()=>{
 menu.classList.remove("active");
 });
+});
+
+}
+
 });
