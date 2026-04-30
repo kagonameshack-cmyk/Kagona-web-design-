@@ -123,24 +123,25 @@ window.location.href = "success.html";
 });
 
 
-const hamburger = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
+document.addEventListener("DOMContentLoaded", function(){
 
-if(hamburger && menu){
+  const hamburger = document.getElementById("hamburger");
+  const menu = document.getElementById("menu");
 
-hamburger.addEventListener("click", function(){
-  menu.classList.toggle("active");
-  hamburger.classList.toggle("active");
-});
+  if(hamburger && menu){
 
-document.querySelectorAll(".menu-overlay a").forEach(link=>{
-  link.addEventListener("click", ()=>{
-    menu.classList.remove("active");
-    hamburger.classList.remove("active");
-  });
-});
+    hamburger.addEventListener("click", function(){
+      menu.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
 
-      }
-document.getElementById("hamburger").onclick = function(){
-  alert("clicked");
+    document.querySelectorAll(".menu-overlay a").forEach(link=>{
+      link.addEventListener("click", ()=>{
+        menu.classList.remove("active");
+        hamburger.classList.remove("active");
+      });
+    });
+
   }
+
+});
