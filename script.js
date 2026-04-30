@@ -120,7 +120,7 @@ e.preventDefault();
 window.location.href = "success.html";
 });
 
-// HAMBURGER MENU
+// HAMBURGER MENU (FULLY WORKING)
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -129,13 +129,17 @@ const menu = document.getElementById("menu");
 
 if(hamburger && menu){
 
+// toggle menu
 hamburger.addEventListener("click", () => {
 menu.classList.toggle("active");
+hamburger.classList.toggle("active");
 });
 
+// close menu when clicking links
 document.querySelectorAll(".menu-overlay a").forEach(link=>{
-link.addEventListener("click",()=>{
+link.addEventListener("click", ()=>{
 menu.classList.remove("active");
+hamburger.classList.remove("active");
 });
 });
 
