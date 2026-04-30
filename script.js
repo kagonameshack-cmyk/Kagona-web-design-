@@ -112,3 +112,10 @@ document.getElementById("timeline").value;
 document.querySelectorAll(".next").forEach(btn=>{
 btn.addEventListener("click",updateReview);
 });
+
+
+document.getElementById("luxuryForm").addEventListener("submit", function(e){
+e.preventDefault();
+
+window.location.href = "success.html";
+});
