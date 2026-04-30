@@ -124,6 +124,8 @@ window.location.href = "success.html";
 const hamburger = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 
+if(hamburger && menu){
+
 hamburger.addEventListener("click", function(){
   menu.classList.toggle("active");
   hamburger.classList.toggle("active");
@@ -135,3 +137,5 @@ document.querySelectorAll(".menu-overlay a").forEach(link=>{
     hamburger.classList.remove("active");
   });
 });
+
+      }
