@@ -1,4 +1,6 @@
-const steps = document.querySelectorAll(".form-step");
+if(document.querySelector(".form-step")){
+  // ALL form code here
+}
 const nextBtns = document.querySelectorAll(".next");
 const prevBtns = document.querySelectorAll(".prev");
 
