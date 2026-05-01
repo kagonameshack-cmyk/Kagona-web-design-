@@ -227,29 +227,45 @@ transform: scale(1);
 }
 
 /* =========================
-   NAVBAR
+   STICKY NAVBAR UPGRADE
 ========================= */
 
 .nav-container{
+
 position:fixed;
 top:0;
 left:0;
+
 width:100%;
 
 display:flex;
 justify-content:space-between;
 align-items:center;
 
-padding:20px 30px;
+padding:20px 40px;
 
 z-index:1000;
-}
 
 .logo{
 font-size:18px;
 letter-spacing:2px;
 }
 
+/* smooth transition */
+transition: all 0.4s ease;
+}
+
+
+/* SCROLL STATE */
+
+.nav-container.scrolled{
+background: rgba(0,0,0,0.6);
+backdrop-filter: blur(10px);
+
+padding:12px 40px;
+
+border-bottom:1px solid rgba(255,255,255,0.08);
+    }
 
 /* =========================
    HAMBURGER ICON
