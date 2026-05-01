@@ -498,7 +498,7 @@ pointer-events:auto;
 }
 
 
-/* CONTENT */
+/* CONTENT ANIMATION */
 
 .case-content{
 max-width:900px;
@@ -506,6 +506,18 @@ width:90%;
 color:white;
 text-align:center;
 position:relative;
+
+/* 👇 animation start state */
+transform: scale(0.9) translateY(30px);
+opacity:0;
+
+transition: all 0.5s ease;
+}
+
+/* 👇 animate IN */
+.case-modal.active .case-content{
+transform: scale(1) translateY(0);
+opacity:1;
 }
 
 /* IMAGE */
