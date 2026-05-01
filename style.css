@@ -576,3 +576,78 @@ right:0;
 font-size:30px;
 cursor:pointer;
     }
+
+/* =========================
+   BUTTON MICRO-INTERACTIONS
+========================= */
+
+.btn-primary,
+.case-cta{
+
+position:relative;
+overflow:hidden;
+
+transition: all 0.3s ease;
+}
+
+/* HOVER LIFT */
+
+.btn-primary:hover,
+.case-cta:hover{
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 10px 30px rgba(200,169,106,0.25);
+}
+
+
+/* GLOW RIPPLE EFFECT */
+
+.btn-primary::after,
+.case-cta::after{
+
+content:"";
+position:absolute;
+top:0;
+left:-100%;
+
+width:100%;
+height:100%;
+
+background: linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,0.3),
+transparent
+);
+
+transition:0.6s;
+}
+
+.btn-primary:hover::after,
+.case-cta:hover::after{
+left:100%;
+}
+
+/* =========================
+   PORTFOLIO MICRO EFFECTS
+========================= */
+
+.portfolio-card{
+transition: all 0.4s ease;
+}
+
+/* DEPTH EFFECT */
+
+.portfolio-card:hover{
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* IMAGE ZOOM IMPROVED */
+
+.portfolio-card img{
+transition: transform 0.6s ease;
+}
+
+.portfolio-card:hover img{
+transform: scale(1.1);
+    }
