@@ -144,3 +144,42 @@ hamburger.classList.remove("active");
 }
 
 });
+
+
+// =========================
+// CASE STUDY MODAL
+// =========================
+
+const cards = document.querySelectorAll(".portfolio-card");
+const modal = document.getElementById("caseModal");
+
+const modalImg = document.getElementById("caseImage");
+const modalTitle = document.getElementById("caseTitle");
+const modalCategory = document.getElementById("caseCategory");
+
+const closeModal = document.getElementById("closeModal");
+
+// OPEN MODAL
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+
+    modal.classList.add("active");
+
+    modalImg.src = card.dataset.image;
+    modalTitle.innerText = card.dataset.title;
+    modalCategory.innerText = card.dataset.category;
+
+  });
+});
+
+// CLOSE MODAL
+closeModal.addEventListener("click", () => {
+  modal.classList.remove("active");
+});
+
+// CLOSE WHEN CLICK OUTSIDE
+modal.addEventListener("click", (e) => {
+  if(e.target === modal){
+    modal.classList.remove("active");
+  }
+});
