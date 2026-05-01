@@ -820,3 +820,18 @@ transition:0.3s ease;
 transform: translateY(-3px);
 box-shadow:0 15px 35px rgba(200,169,106,0.3);
 }
+
+/* =========================
+   SCROLL REVEAL
+========================= */
+
+.reveal{
+opacity:0;
+transform: translateY(40px);
+transition: all 0.8s ease;
+}
+
+.reveal.active{
+opacity:1;
+transform: translateY(0);
+}
