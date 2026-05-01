@@ -430,25 +430,28 @@ left:0;
 width:100%;
 padding:20px;
 
-background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+background:linear-gradient(to top, rgba(0,0,0,0.85), transparent);
 
-opacity:0;
+/* 👇 ALWAYS VISIBLE */
+opacity:1;
+
 transition:0.4s ease;
 }
 
-/* TEXT */
+/* TEXT STYLE UPGRADE */
 
 .portfolio-overlay h3{
 font-size:18px;
 margin-bottom:5px;
+font-family: "Playfair Display", serif;
 }
 
 .portfolio-overlay span{
-font-size:13px;
+font-size:12px;
 color:#C8A96A;
-letter-spacing:1px;
-}
-
+letter-spacing:2px;
+text-transform:uppercase;
+    }
 
 /* HOVER EFFECT */
 
@@ -458,4 +461,8 @@ transform:scale(1.08);
 
 .portfolio-card:hover .portfolio-overlay{
 opacity:1;
+    }
+
+.portfolio-card:hover .portfolio-overlay{
+background:linear-gradient(to top, rgba(0,0,0,0.95), transparent);
     }
