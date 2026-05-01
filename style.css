@@ -738,3 +738,69 @@ color:#C8A96A;
 font-size:13px;
 letter-spacing:1px;
 }
+
+/* =========================
+   FINAL CTA SECTION
+========================= */
+
+.final-cta{
+padding:140px 20px;
+text-align:center;
+
+background: linear-gradient(
+to bottom,
+#0b0b0c,
+#000000
+);
+
+color:white;
+}
+
+/* CONTAINER */
+
+.cta-container{
+max-width:700px;
+margin:auto;
+}
+
+/* TITLE */
+
+.final-cta h2{
+font-size:36px;
+margin-bottom:20px;
+font-family:"Playfair Display", serif;
+}
+
+/* TEXT */
+
+.final-cta p{
+color:#aaa;
+margin-bottom:40px;
+line-height:1.6;
+}
+
+
+/* BUTTON */
+
+.cta-button{
+display:inline-block;
+
+padding:14px 40px;
+
+background:#C8A96A;
+color:black;
+
+border-radius:10px;
+text-decoration:none;
+
+font-weight:500;
+
+transition:0.3s ease;
+}
+
+/* HOVER */
+
+.cta-button:hover{
+transform: translateY(-3px);
+box-shadow:0 15px 35px rgba(200,169,106,0.3);
+}
