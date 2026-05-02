@@ -1,146 +1,165 @@
 /* =========================
-   GLOBAL
+   BASE
 ========================= */
 
 .application-page{
-background:#0b0b0c;
-color:white;
-font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #111 0%, #050505 60%);
+  color: #fff;
+  font-family: "Inter", sans-serif;
 }
 
 
 /* =========================
-   LAYOUT
+   SECTION WRAPPER
 ========================= */
 
 .luxury-application{
-display:flex;
-justify-content:center;
-padding:120px 20px;
-}
-
-.app-wrapper{
-max-width:700px;
-width:100%;
-
-/* upgraded glass look */
-background: rgba(10,10,10,0.75);
-
-backdrop-filter: blur(25px);
-
-border-radius:20px;
-
-border:1px solid rgba(255,255,255,0.06);
-
-box-shadow:
-0 25px 80px rgba(0,0,0,0.6),
-0 0 0 1px rgba(255,255,255,0.04);
-
-overflow:hidden;
+  display:flex;
+  justify-content:center;
+  padding:120px 20px;
 }
 
 
 /* =========================
-   HEADER (IMAGE SECTION)
+   MAIN CARD
+========================= */
+
+.app-wrapper{
+  max-width:720px;
+  width:100%;
+
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.06),
+    rgba(255,255,255,0.02)
+  );
+
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  border-radius:24px;
+
+  padding:50px;
+
+  box-shadow:
+    0 20px 60px rgba(0,0,0,0.6),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+
+  position:relative;
+  overflow:hidden;
+}
+
+
+/* GOLD GLOW EDGE */
+.app-wrapper::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:2px;
+
+  background:linear-gradient(90deg, transparent, #C8A96A, transparent);
+}
+
+
+/* =========================
+   HEADER (WITH IMAGE OPTION)
 ========================= */
 
 .app-header{
+  margin-bottom:40px;
+  position:relative;
+}
 
-background:
-linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.9)),
-url("../images/header-bg.jpg");
+/* Optional image overlay effect */
+.app-header::after{
+  content:"";
+  position:absolute;
+  inset:0;
 
-background-size:cover;
-background-position:center;
-
-padding:60px 40px 50px 40px;
+  background:linear-gradient(to bottom, rgba(0,0,0,0.4), #050505 80%);
+  pointer-events:none;
 }
 
 
 /* =========================
-   TYPOGRAPHY
+   TITLES
 ========================= */
 
 .app-title{
-font-size:34px;
-font-weight:600;
-letter-spacing:0.5px;
-margin-bottom:10px;
+  font-size:34px;
+  font-weight:600;
+  letter-spacing:0.5px;
+  margin-bottom:10px;
 }
 
 .app-subtitle{
-color:#bdbdbd;
-margin-bottom:40px;
-line-height:1.6;
+  color:#aaa;
+  font-size:15px;
+  margin-bottom:30px;
+  line-height:1.6;
 }
 
 
 /* =========================
-   PROGRESS BAR
+   PROGRESS
 ========================= */
 
 .progress-container{
-display:flex;
-justify-content:space-between;
-margin-bottom:20px;
-position:relative;
+  display:flex;
+  justify-content:space-between;
+  position:relative;
 }
 
 .progress-line{
-position:absolute;
-top:12px;
-left:0;
-width:100%;
-height:2px;
-background: rgba(255,255,255,0.1);
+  position:absolute;
+  top:12px;
+  left:0;
+  width:100%;
+  height:2px;
+  background:rgba(255,255,255,0.08);
 }
 
 .step{
-width:26px;
-height:26px;
-background:#1a1a1a;
-border-radius:50%;
+  width:28px;
+  height:28px;
+  border-radius:50%;
+  background:#1a1a1a;
 
-display:flex;
-align-items:center;
-justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-font-size:12px;
+  font-size:12px;
 
-z-index:2;
+  z-index:2;
 
-transition: all 0.3s ease;
+  transition:0.3s;
 }
 
 .step.active{
-background:#C8A96A;
-color:black;
+  background:#C8A96A;
+  color:#000;
 
-box-shadow:0 0 12px rgba(200,169,106,0.7);
+  box-shadow:0 0 15px rgba(200,169,106,0.6);
 }
 
 
 /* =========================
-   FORM BODY
+   FORM
 ========================= */
 
-#luxuryForm{
-padding:40px;
-}
-
 .form-step{
-display:none;
-flex-direction:column;
-gap:20px;
+  display:none;
+  flex-direction:column;
+  gap:20px;
 }
 
 .form-step.active{
-display:flex;
-}
-
-h2{
-font-size:22px;
-margin-bottom:10px;
+  display:flex;
 }
 
 
@@ -151,89 +170,37 @@ margin-bottom:10px;
 input,
 select,
 textarea{
+  background:rgba(255,255,255,0.03);
 
-background: rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.08);
 
-border:1px solid rgba(255,255,255,0.08);
+  padding:16px;
 
-padding:16px;
+  border-radius:12px;
 
-border-radius:10px;
+  color:#fff;
 
-color:white;
+  font-size:14px;
 
-transition: all 0.25s ease;
+  outline:none;
 
-font-size:14px;
+  transition:all 0.3s ease;
 }
 
-textarea{
-min-height:120px;
-}
 
-input::placeholder,
-textarea::placeholder{
-color:#777;
-}
-
-/* focus effect */
-
+/* FOCUS = GOLD PREMIUM FEEL */
 input:focus,
 select:focus,
 textarea:focus{
-
-border-color:#C8A96A;
-
-box-shadow:
-0 0 0 1px #C8A96A,
-0 0 20px rgba(200,169,106,0.15);
-
-outline:none;
+  border-color:#C8A96A;
+  box-shadow:0 0 10px rgba(200,169,106,0.25);
 }
 
 
-/* =========================
-   BUTTONS
-========================= */
-
-.form-nav{
-display:flex;
-justify-content:space-between;
-margin-top:30px;
-}
-
-button{
-padding:14px 26px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-font-weight:500;
-transition: all 0.3s ease;
-}
-
-/* primary */
-
-.next,
-.submitBtn{
-background:#C8A96A;
-color:black;
-}
-
-.next:hover,
-.submitBtn:hover{
-transform: translateY(-2px);
-box-shadow:0 12px 30px rgba(200,169,106,0.35);
-}
-
-/* secondary */
-
-.prev{
-background:#1a1a1a;
-color:white;
-}
-
-.prev:hover{
-background:#222;
+/* TEXTAREA */
+textarea{
+  min-height:140px;
+  resize:none;
 }
 
 
@@ -242,10 +209,60 @@ background:#222;
 ========================= */
 
 .usdPreview{
-color:#C8A96A;
-font-weight:600;
-margin-top:10px;
-font-size:15px;
+  color:#C8A96A;
+  font-weight:600;
+  font-size:16px;
+  margin-top:5px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+  padding:14px 26px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:500;
+  letter-spacing:0.3px;
+  transition:all 0.3s ease;
+}
+
+
+/* PRIMARY BUTTON */
+.next,
+.submitBtn{
+  background:#C8A96A;
+  color:#000;
+
+  box-shadow:0 8px 20px rgba(200,169,106,0.25);
+}
+
+.next:hover,
+.submitBtn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 12px 30px rgba(200,169,106,0.35);
+}
+
+
+/* SECONDARY */
+.prev{
+  background:#1a1a1a;
+  color:#fff;
+}
+
+.prev:hover{
+  background:#222;
+}
+
+
+/* NAV */
+.form-nav{
+  display:flex;
+  justify-content:space-between;
+  margin-top:25px;
 }
 
 
@@ -254,70 +271,51 @@ font-size:15px;
 ========================= */
 
 .review-card{
+  background:rgba(255,255,255,0.03);
 
-background: rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
 
-border:1px solid rgba(255,255,255,0.06);
+  padding:18px;
 
-padding:20px;
+  border-radius:14px;
 
-border-radius:14px;
+  margin-top:10px;
 
-margin-top:12px;
-
-backdrop-filter: blur(10px);
-
-transition: all 0.3s ease;
+  transition:0.3s;
 }
 
 .review-card:hover{
-transform: translateY(-3px);
-box-shadow:0 10px 30px rgba(0,0,0,0.4);
+  transform:translateY(-2px);
+  border-color:rgba(200,169,106,0.3);
 }
 
 .review-card h4{
-color:#C8A96A;
-font-size:12px;
-margin-bottom:6px;
-letter-spacing:1px;
-text-transform:uppercase;
+  color:#C8A96A;
+  font-size:12px;
+  letter-spacing:1px;
+  margin-bottom:5px;
 }
 
 .review-card p{
-color:#fff;
-font-size:15px;
+  font-size:15px;
 }
 
 
 /* =========================
-   TIMELINE SELECT FIX
+   SUBTLE ENTRY ANIMATION
 ========================= */
 
-#timeline{
-appearance:none;
+.form-step.active{
+  animation:fadeSlide 0.4s ease;
 }
 
-
-/* =========================
-   MOBILE OPTIMIZATION
-========================= */
-
-@media (max-width:600px){
-
-.app-wrapper{
-padding:0;
-}
-
-#luxuryForm{
-padding:30px 20px;
-}
-
-.app-header{
-padding:40px 20px;
-}
-
-.app-title{
-font-size:28px;
-}
-
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform:translateY(10px);
   }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+   }
