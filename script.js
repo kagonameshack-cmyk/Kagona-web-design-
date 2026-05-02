@@ -87,6 +87,7 @@ function updateReview(){
 const project = document.getElementById("projectType");
 const name = document.getElementById("fullName");
 const email = document.getElementById("email");
+const company = document.getElementById("company");   
 const country = document.getElementById("country");
 const budget = document.getElementById("budget");
 const currency = document.getElementById("currency");
@@ -95,6 +96,7 @@ const timeline = document.getElementById("timeline");
 if(project) document.getElementById("reviewProject").innerText = project.value;
 if(name) document.getElementById("reviewName").innerText = name.value;
 if(email) document.getElementById("reviewEmail").innerText = email.value;
+if(company) document.getElementById("reviewCompany").innerText = company.value;   
 if(country) document.getElementById("reviewCountry").innerText = country.value;
 if(budget && currency) document.getElementById("reviewBudget").innerText = budget.value + " " + currency.value;
 if(timeline) document.getElementById("reviewTimeline").innerText = timeline.value;
