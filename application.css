@@ -3,14 +3,14 @@
 ========================= */
 
 .application-page{
-  background: radial-gradient(circle at top, #111 0%, #050505 60%);
-  color: #fff;
-  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #0f0f10, #050505 70%);
+  color:#fff;
+  font-family:"Inter", sans-serif;
 }
 
 
 /* =========================
-   SECTION WRAPPER
+   SECTION
 ========================= */
 
 .luxury-application{
@@ -28,14 +28,14 @@
   max-width:720px;
   width:100%;
 
-  background: linear-gradient(
+  background:linear-gradient(
     145deg,
     rgba(255,255,255,0.06),
     rgba(255,255,255,0.02)
   );
 
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter:blur(30px);
+  -webkit-backdrop-filter:blur(30px);
 
   border:1px solid rgba(255,255,255,0.08);
 
@@ -44,7 +44,7 @@
   padding:50px;
 
   box-shadow:
-    0 20px 60px rgba(0,0,0,0.6),
+    0 30px 80px rgba(0,0,0,0.7),
     inset 0 1px 0 rgba(255,255,255,0.05);
 
   position:relative;
@@ -52,7 +52,7 @@
 }
 
 
-/* GOLD GLOW EDGE */
+/* GOLD EDGE */
 .app-wrapper::before{
   content:"";
   position:absolute;
@@ -66,41 +66,31 @@
 
 
 /* =========================
-   HEADER (WITH IMAGE OPTION)
+   HEADER
 ========================= */
 
 .app-header{
   margin-bottom:40px;
-  position:relative;
 }
-
-/* Optional image overlay effect */
-.app-header::after{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:linear-gradient(to bottom, rgba(0,0,0,0.4), #050505 80%);
-  pointer-events:none;
-}
-
-
-/* =========================
-   TITLES
-========================= */
 
 .app-title{
   font-size:34px;
   font-weight:600;
-  letter-spacing:0.5px;
   margin-bottom:10px;
 }
 
 .app-subtitle{
   color:#aaa;
   font-size:15px;
-  margin-bottom:30px;
-  line-height:1.6;
+  margin-bottom:10px;
+}
+
+.form-intro{
+  font-size:12px;
+  color:#C8A96A;
+  letter-spacing:1px;
+  margin-bottom:25px;
+  text-transform:uppercase;
 }
 
 
@@ -116,7 +106,7 @@
 
 .progress-line{
   position:absolute;
-  top:12px;
+  top:14px;
   left:0;
   width:100%;
   height:2px;
@@ -124,8 +114,8 @@
 }
 
 .step{
-  width:28px;
-  height:28px;
+  width:30px;
+  height:30px;
   border-radius:50%;
   background:#1a1a1a;
 
@@ -134,7 +124,6 @@
   justify-content:center;
 
   font-size:12px;
-
   z-index:2;
 
   transition:0.3s;
@@ -144,75 +133,133 @@
   background:#C8A96A;
   color:#000;
 
-  box-shadow:0 0 15px rgba(200,169,106,0.6);
+  box-shadow:0 0 20px rgba(200,169,106,0.6);
 }
 
 
 /* =========================
-   FORM
+   FORM STEPS
 ========================= */
 
 .form-step{
   display:none;
   flex-direction:column;
-  gap:20px;
+  gap:22px;
 }
 
 .form-step.active{
   display:flex;
+  animation:fadeSlide 0.4s ease;
+}
+
+@keyframes fadeSlide{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+/* STEP INDICATOR */
+
+.step-indicator{
+  font-size:12px;
+  color:#888;
+  letter-spacing:1px;
 }
 
 
 /* =========================
-   INPUTS
+   INPUT GROUP
 ========================= */
+
+.input-group{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+
+.input-group label{
+  font-size:13px;
+  color:#bbb;
+}
+
+
+/* INPUTS */
 
 input,
 select,
 textarea{
   background:rgba(255,255,255,0.03);
-
   border:1px solid rgba(255,255,255,0.08);
 
   padding:16px;
-
   border-radius:12px;
 
   color:#fff;
-
   font-size:14px;
 
   outline:none;
-
   transition:all 0.3s ease;
 }
 
 
-/* FOCUS = GOLD PREMIUM FEEL */
+/* FOCUS EFFECT */
+
 input:focus,
 select:focus,
 textarea:focus{
   border-color:#C8A96A;
-  box-shadow:0 0 10px rgba(200,169,106,0.25);
+  box-shadow:0 0 15px rgba(200,169,106,0.25);
 }
 
 
 /* TEXTAREA */
+
 textarea{
   min-height:140px;
   resize:none;
 }
 
 
+/* INPUT HINT */
+
+.input-hint{
+  font-size:11px;
+  color:#777;
+}
+
+
 /* =========================
-   USD PREVIEW
+   BUDGET BOX
 ========================= */
+
+.budget-box{
+  padding:20px;
+  border-radius:16px;
+
+  background:rgba(255,255,255,0.02);
+  border:1px solid rgba(255,255,255,0.05);
+
+  transition:0.3s;
+}
+
+.budget-box:hover{
+  border-color:rgba(200,169,106,0.3);
+}
+
+
+/* USD PREVIEW */
 
 .usdPreview{
   color:#C8A96A;
   font-weight:600;
-  font-size:16px;
-  margin-top:5px;
+  margin-top:10px;
+  font-size:15px;
 }
 
 
@@ -226,28 +273,23 @@ button{
   border-radius:10px;
   cursor:pointer;
   font-weight:500;
-  letter-spacing:0.3px;
   transition:all 0.3s ease;
 }
 
-
-/* PRIMARY BUTTON */
 .next,
 .submitBtn{
   background:#C8A96A;
   color:#000;
 
-  box-shadow:0 8px 20px rgba(200,169,106,0.25);
+  box-shadow:0 10px 25px rgba(200,169,106,0.25);
 }
 
 .next:hover,
 .submitBtn:hover{
   transform:translateY(-2px);
-  box-shadow:0 12px 30px rgba(200,169,106,0.35);
+  box-shadow:0 15px 35px rgba(200,169,106,0.35);
 }
 
-
-/* SECONDARY */
 .prev{
   background:#1a1a1a;
   color:#fff;
@@ -257,8 +299,6 @@ button{
   background:#222;
 }
 
-
-/* NAV */
 .form-nav{
   display:flex;
   justify-content:space-between;
@@ -267,20 +307,23 @@ button{
 
 
 /* =========================
-   REVIEW CARDS
+   REVIEW SECTION
 ========================= */
+
+.review-heading{
+  margin-top:10px;
+  font-size:16px;
+  color:#C8A96A;
+}
 
 .review-card{
   background:rgba(255,255,255,0.03);
-
   border:1px solid rgba(255,255,255,0.06);
 
   padding:18px;
-
   border-radius:14px;
 
   margin-top:10px;
-
   transition:0.3s;
 }
 
@@ -299,23 +342,3 @@ button{
 .review-card p{
   font-size:15px;
 }
-
-
-/* =========================
-   SUBTLE ENTRY ANIMATION
-========================= */
-
-.form-step.active{
-  animation:fadeSlide 0.4s ease;
-}
-
-@keyframes fadeSlide{
-  from{
-    opacity:0;
-    transform:translateY(10px);
-  }
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-   }
