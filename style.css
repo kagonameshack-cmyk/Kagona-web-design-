@@ -864,3 +864,15 @@ padding-top:20px;
 color:#777;
 font-size:13px;
     }
+
+/* Footer email link style */
+
+.footer-contact a{
+color:#C8A96A; /* gold */
+text-decoration:none;
+transition:0.3s;
+}
+
+.footer-contact a:hover{
+color:#E5C98B; /* lighter gold on hover */
+}
