@@ -173,58 +173,6 @@ justify-content:center;
 
 }
 
-/* =========================
-   SUCCESS PAGE
-========================= */
-
-.success-wrapper{
-text-align:center;
-padding:80px 40px;
-}
-
-/* check icon */
-
-.success-icon{
-font-size:60px;
-color:#C8A96A;
-margin-bottom:20px;
-animation: fadeInScale 0.6s ease;
-}
-
-/* title */
-
-.success-title{
-font-size:32px;
-margin-bottom:15px;
-}
-
-/* message */
-
-.success-text{
-color:#bdbdbd;
-line-height:1.6;
-margin-bottom:30px;
-}
-
-/* button center */
-
-.success-btn{
-display:inline-block;
-margin-top:20px;
-}
-
-/* animation */
-
-@keyframes fadeInScale{
-0%{
-opacity:0;
-transform: scale(0.8);
-}
-100%{
-opacity:1;
-transform: scale(1);
-}
-}
 
 /* =========================
    STICKY NAVBAR UPGRADE
