@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,7 +9,6 @@
 
 <link rel="stylesheet" href="../application.css">
 <script defer src="../script.js"></script>
-
 </head>
 
 <body class="application-page">
@@ -19,6 +17,7 @@
 
 <div class="app-wrapper">
 
+<!-- HEADER -->
 <div class="app-header">
 
 <h1 class="app-title">
@@ -29,151 +28,161 @@ Private Project Application
 Complete this short application to begin your digital transformation.
 </p>
 
+<p class="form-intro">
+Private & Confidential Application
+</p>
+
 <div class="progress-container">
-  
-<div class="progress-line"></div>
+  <div class="progress-line"></div>
 
-<div class="step active">1</div>
-<div class="step">2</div>
-<div class="step">3</div>
-<div class="step">4</div>
-<div class="step">5</div>
-
+  <div class="step active">1</div>
+  <div class="step">2</div>
+  <div class="step">3</div>
+  <div class="step">4</div>
+  <div class="step">5</div>
 </div>
 
 </div>
 
 <form id="luxuryForm">
 
-
 <!-- STEP 1 -->
-
 <div class="form-step active">
+
+<p class="step-indicator">Step 1 of 5</p>
 
 <h2>Introduction</h2>
 
-<select required>
-
-<option value="">Project Type</option>
-
+<div class="input-group">
+<label>Project Type</label>
+<select id="projectType" required>
+<option value="">Select Project Type</option>
 <option>Luxury Restaurant Website</option>
 <option>Real Estate Website</option>
 <option>Corporate Brand Website</option>
 <option>E-commerce Platform</option>
 <option>Custom Web Platform</option>
 <option>Other</option>
-
 </select>
+</div>
 
-<textarea
-placeholder="Tell us briefly about your project vision">
-</textarea>
+<div class="input-group">
+<label>Project Vision</label>
+<textarea placeholder="Tell us briefly about your project vision"></textarea>
+</div>
 
 <div class="form-nav">
-
-<button type="button" class="next">
-Next
-</button>
-
+<button type="button" class="next">Next</button>
 </div>
 
 </div>
-
-
 
 <!-- STEP 2 -->
-
 <div class="form-step">
+
+<p class="step-indicator">Step 2 of 5</p>
 
 <h2>Contact Details</h2>
 
-<input type="text" placeholder="Full Name" required>
+<div class="input-group">
+<label>Full Name</label>
+<input id="fullName" type="text" placeholder="Full Name" required>
+</div>
 
-<input type="email" placeholder="Email Address" required>
+<div class="input-group">
+<label>Email Address</label>
+<input id="email" type="email" placeholder="Email Address" required>
+<span class="input-hint">We’ll never share your email.</span>
+</div>
 
+<div class="input-group">
+<label>Company Name</label>
 <input type="text" placeholder="Company Name">
+</div>
 
+<div class="input-group">
+<label>Phone Number</label>
 <input type="tel" placeholder="Phone Number">
+</div>
 
 <div class="form-nav">
-
 <button type="button" class="prev">Back</button>
-
 <button type="button" class="next">Next</button>
-
 </div>
 
 </div>
-
-
 
 <!-- STEP 3 -->
-
 <div class="form-step">
+
+<p class="step-indicator">Step 3 of 5</p>
 
 <h2>Country</h2>
 
+<div class="input-group">
+<label>Select Country</label>
 <select id="country" required>
 <option value="">Select Country</option>
-
 </select>
+</div>
 
 <div class="form-nav">
-
 <button type="button" class="prev">Back</button>
-
 <button type="button" class="next">Next</button>
-
 </div>
 
 </div>
-
-
 
 <!-- STEP 4 -->
-
 <div class="form-step">
+
+<p class="step-indicator">Step 4 of 5</p>
 
 <h2>Budget & Timeline</h2>
 
-<input id="budget" type="number" placeholder="Project Budget">
+<div class="budget-box">
 
+<div class="input-group">
+<label>Project Budget</label>
+<input id="budget" type="number" placeholder="Enter amount">
+</div>
+
+<div class="input-group">
+<label>Currency</label>
 <select id="currency">
 <option value="USD">USD</option>
 <option value="KES">KES</option>
 <option value="EUR">EUR</option>
 <option value="GBP">GBP</option>
 </select>
+</div>
 
-<p class="usdPreview">
-≈ $0.00 USD
-</p>
+<p class="usdPreview">≈ $0.00 USD</p>
 
+</div>
+
+<div class="input-group">
+<label>Project Timeline</label>
 <select id="timeline">
-
 <option value="">Select timeline</option>
 <option value="ASAP">ASAP</option>
 <option value="1–2 Months">1–2 Months</option>
 <option value="3–6 Months">3–6 Months</option>
 <option value="Flexible">Flexible</option>
-
 </select>
+</div>
 
 <div class="form-nav">
-
 <button type="button" class="prev">Back</button>
-
 <button type="button" class="next">Next</button>
+</div>
 
 </div>
 
-  </div>
-
-
-
 <!-- STEP 5 -->
-
 <div class="form-step">
+
+<p class="step-indicator">Step 5 of 5</p>
 
 <h2>Final Review</h2>
 
@@ -181,6 +190,7 @@ Next
 Please review your information before submitting your application.
 </p>
 
+<h3 class="review-heading">Application Summary</h3>
 
 <div class="review-card">
 <h4>Project Type</h4>
@@ -212,20 +222,14 @@ Please review your information before submitting your application.
 <p id="reviewTimeline"></p>
 </div>
 
-
 <div class="form-nav">
-
 <button type="button" class="prev">Back</button>
-
 <button type="submit" class="submitBtn">
 Submit Application
 </button>
-
 </div>
 
-  </div>
-
-
+</div>
 
 </form>
 
@@ -235,5 +239,4 @@ Submit Application
 
 <script src="../script.js"></script>
 </body>
-
   </html>
