@@ -222,16 +222,3 @@ window.addEventListener("scroll", () => {
 
 });
 
-/* =========================
-   LOADER CONTROL
-========================= */
-
-window.addEventListener("load", function(){
-
-  const loader = document.getElementById("loader");
-
-  setTimeout(()=>{
-    loader.classList.add("hide");
-  }, 600); // duration
-
-});
