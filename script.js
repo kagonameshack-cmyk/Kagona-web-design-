@@ -232,6 +232,6 @@ window.addEventListener("load", function(){
 
   setTimeout(()=>{
     loader.classList.add("hide");
-  }, 1200); // duration
+  }, 600); // duration
 
 });
