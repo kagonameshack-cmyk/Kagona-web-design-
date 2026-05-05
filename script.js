@@ -1,3 +1,7 @@
+// 🔥 IMPORT FIREBASE (ADD THIS AT TOP)
+import { db, collection, addDoc } from "../firebase.js";
+
+
 document.addEventListener("DOMContentLoaded", function(){
 
 /* =========================
@@ -106,14 +110,34 @@ btn.addEventListener("click", updateReview);
 });
 
 
-/* FORM SUBMIT */
+/* 🔥 FORM SUBMIT (UPDATED WITH FIREBASE) */
 
 const form = document.getElementById("luxuryForm");
 
 if(form){
-form.addEventListener("submit", function(e){
+form.addEventListener("submit", async function(e){
 e.preventDefault();
+
+try{
+
+await addDoc(collection(db, "applications"), {
+project: document.getElementById("projectType")?.value || "",
+name: document.getElementById("fullName")?.value || "",
+email: document.getElementById("email")?.value || "",
+country: document.getElementById("country")?.value || "",
+budget: document.getElementById("budget")?.value || "",
+currency: document.getElementById("currency")?.value || "",
+timeline: document.getElementById("timeline")?.value || "",
+createdAt: new Date()
+});
+
 window.location.href = "success.html";
+
+}catch(error){
+console.error(error);
+alert("Submission failed. Try again.");
+}
+
 });
 }
 
@@ -159,7 +183,6 @@ const modalCategory = document.getElementById("caseCategory");
 
 const closeModal = document.getElementById("closeModal");
 
-// OPEN MODAL
 cards.forEach(card => {
   card.addEventListener("click", () => {
 
@@ -172,17 +195,19 @@ cards.forEach(card => {
   });
 });
 
-// CLOSE MODAL
+if(closeModal){
 closeModal.addEventListener("click", () => {
   modal.classList.remove("active");
 });
+}
 
-// CLOSE WHEN CLICK OUTSIDE
+if(modal){
 modal.addEventListener("click", (e) => {
   if(e.target === modal){
     modal.classList.remove("active");
   }
 });
+}
 
 
 // =========================
@@ -193,13 +218,16 @@ const navbar = document.querySelector(".nav-container");
 
 window.addEventListener("scroll", () => {
 
-  if(window.scrollY > 50){
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
+  if(navbar){
+    if(window.scrollY > 50){
+      navbar.classList.add("scrolled");
+    } else {
+      navbar.classList.remove("scrolled");
+    }
   }
 
 });
+
 
 // =========================
 // SCROLL REVEAL
@@ -221,4 +249,3 @@ window.addEventListener("scroll", () => {
   });
 
 });
-
