@@ -124,6 +124,8 @@ await addDoc(collection(db, "applications"), {
 project: document.getElementById("projectType")?.value || "",
 name: document.getElementById("fullName")?.value || "",
 email: document.getElementById("email")?.value || "",
+company: document.getElementById("company")?.value || "",
+phone: document.getElementById("phone")?.value || "",
 country: document.getElementById("country")?.value || "",
 budget: document.getElementById("budget")?.value || "",
 currency: document.getElementById("currency")?.value || "",
