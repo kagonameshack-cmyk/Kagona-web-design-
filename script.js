@@ -1,6 +1,5 @@
-// 🔥 IMPORT FIREBASE (ADD THIS AT TOP)
+// 🔥 FIREBASE IMPORT (MODULE MODE)
 import { db, collection, addDoc } from "../firebase.js";
-
 
 document.addEventListener("DOMContentLoaded", function(){
 
@@ -16,24 +15,36 @@ const prevBtns = document.querySelectorAll(".prev");
 
 let current = 0;
 
+// NEXT BUTTON
 nextBtns.forEach(btn => {
 btn.addEventListener("click", () => {
+
+if(current < steps.length - 1){
 steps[current].classList.remove("active");
 current++;
 steps[current].classList.add("active");
+}
+
 });
 });
 
+// PREV BUTTON
 prevBtns.forEach(btn => {
 btn.addEventListener("click", () => {
+
+if(current > 0){
 steps[current].classList.remove("active");
 current--;
 steps[current].classList.add("active");
+}
+
 });
 });
 
 
-/* COUNTRY LIST */
+/* =========================
+   COUNTRY LIST
+========================= */
 
 const countries = [
 "Argentina","Australia","Austria","Belgium","Brazil","Canada","China",
@@ -55,7 +66,9 @@ countrySelect.appendChild(option);
 }
 
 
-/* CURRENCY CONVERTER */
+/* =========================
+   CURRENCY CONVERTER
+========================= */
 
 const rates = {
 USD:1,
@@ -84,7 +97,9 @@ convert();
 }
 
 
-/* REVIEW PAGE */
+/* =========================
+   REVIEW PAGE
+========================= */
 
 function updateReview(){
 
@@ -92,7 +107,7 @@ const project = document.getElementById("projectType");
 const name = document.getElementById("fullName");
 const email = document.getElementById("email");
 const company = document.getElementById("company");
-const phone = document.getElementById("phone");   
+const phone = document.getElementById("phone");
 const country = document.getElementById("country");
 const budget = document.getElementById("budget");
 const currency = document.getElementById("currency");
@@ -101,20 +116,35 @@ const timeline = document.getElementById("timeline");
 if(project) document.getElementById("reviewProject").innerText = project.value;
 if(name) document.getElementById("reviewName").innerText = name.value;
 if(email) document.getElementById("reviewEmail").innerText = email.value;
-if(company) document.getElementById("reviewCompany").innerText = company.value;
-if(phone) document.getElementById("reviewPhone").innerText = phone.value;   
+
+if(company && document.getElementById("reviewCompany")){
+document.getElementById("reviewCompany").innerText = company.value;
+}
+
+if(phone && document.getElementById("reviewPhone")){
+document.getElementById("reviewPhone").innerText = phone.value;
+}
+
 if(country) document.getElementById("reviewCountry").innerText = country.value;
-if(budget && currency) document.getElementById("reviewBudget").innerText = budget.value + " " + currency.value;
+
+if(budget && currency){
+document.getElementById("reviewBudget").innerText =
+budget.value + " " + currency.value;
+}
+
 if(timeline) document.getElementById("reviewTimeline").innerText = timeline.value;
 
 }
 
-document.querySelectorAll(".next").forEach(btn=>{
+// UPDATE REVIEW ON NEXT CLICK
+nextBtns.forEach(btn=>{
 btn.addEventListener("click", updateReview);
 });
 
 
-/* 🔥 FORM SUBMIT (UPDATED WITH FIREBASE) */
+/* =========================
+   FORM SUBMIT (FIREBASE)
+========================= */
 
 const form = document.getElementById("luxuryForm");
 
@@ -151,7 +181,7 @@ alert("Submission failed. Try again.");
 
 
 /* =========================
-   HAMBURGER MENU (HOMEPAGE ONLY)
+   HAMBURGER MENU
 ========================= */
 
 const hamburger = document.getElementById("hamburger");
@@ -173,12 +203,10 @@ hamburger.classList.remove("active");
 
 }
 
-});
 
-
-// =========================
-// CASE STUDY MODAL
-// =========================
+/* =========================
+   CASE STUDY MODAL (FIXED)
+========================= */
 
 const cards = document.querySelectorAll(".portfolio-card");
 const modal = document.getElementById("caseModal");
@@ -189,69 +217,73 @@ const modalCategory = document.getElementById("caseCategory");
 
 const closeModal = document.getElementById("closeModal");
 
+if(cards.length && modal){
+
 cards.forEach(card => {
-  card.addEventListener("click", () => {
+card.addEventListener("click", () => {
 
-    modal.classList.add("active");
+modal.classList.add("active");
 
-    modalImg.src = card.dataset.image;
-    modalTitle.innerText = card.dataset.title;
-    modalCategory.innerText = card.dataset.category;
+if(modalImg) modalImg.src = card.dataset.image;
+if(modalTitle) modalTitle.innerText = card.dataset.title;
+if(modalCategory) modalCategory.innerText = card.dataset.category;
 
-  });
+});
 });
 
 if(closeModal){
 closeModal.addEventListener("click", () => {
-  modal.classList.remove("active");
+modal.classList.remove("active");
 });
 }
 
-if(modal){
 modal.addEventListener("click", (e) => {
-  if(e.target === modal){
-    modal.classList.remove("active");
-  }
+if(e.target === modal){
+modal.classList.remove("active");
+}
 });
+
 }
 
 
-// =========================
-// NAVBAR SCROLL EFFECT
-// =========================
+/* =========================
+   NAVBAR SCROLL EFFECT
+========================= */
 
 const navbar = document.querySelector(".nav-container");
 
 window.addEventListener("scroll", () => {
 
-  if(navbar){
-    if(window.scrollY > 50){
-      navbar.classList.add("scrolled");
-    } else {
-      navbar.classList.remove("scrolled");
-    }
-  }
+if(navbar){
+if(window.scrollY > 50){
+navbar.classList.add("scrolled");
+}else{
+navbar.classList.remove("scrolled");
+}
+}
 
 });
 
 
-// =========================
-// SCROLL REVEAL
-// =========================
+/* =========================
+   SCROLL REVEAL
+========================= */
 
 const reveals = document.querySelectorAll(".reveal");
 
 window.addEventListener("scroll", () => {
 
-  reveals.forEach(el => {
+reveals.forEach(el => {
 
-    const top = el.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+const top = el.getBoundingClientRect().top;
+const windowHeight = window.innerHeight;
 
-    if(top < windowHeight - 100){
-      el.classList.add("active");
-    }
+if(top < windowHeight - 100){
+el.classList.add("active");
+}
 
-  });
+});
+
+});
 
 });
