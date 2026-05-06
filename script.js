@@ -1,5 +1,5 @@
 // 🔥 FIREBASE IMPORT (MODULE MODE)
-import { db, collection, addDoc } from "../firebase.js";
+import { db, collection, addDoc } from "./firebase.js";
 
 document.addEventListener("DOMContentLoaded", function(){
 
