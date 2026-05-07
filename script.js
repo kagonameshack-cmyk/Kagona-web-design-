@@ -169,6 +169,22 @@ timeline: document.getElementById("timeline")?.value || "",
 createdAt: new Date()
 });
 
+await emailjs.send(
+"service_hcx599e",
+"template_vpkudn4",
+{
+project: document.getElementById("projectType")?.value || "",
+name: document.getElementById("fullName")?.value || "",
+email: document.getElementById("email")?.value || "",
+company: document.getElementById("company")?.value || "",
+phone: document.getElementById("phone")?.value || "",
+country: document.getElementById("country")?.value || "",
+budget: document.getElementById("budget")?.value || "",
+currency: document.getElementById("currency")?.value || "",
+timeline: document.getElementById("timeline")?.value || ""
+}
+);
+   
 window.location.href = "success.html";
 
 }catch(error){
