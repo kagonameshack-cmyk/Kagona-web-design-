@@ -1,7 +1,9 @@
 // 🔥 FIREBASE IMPORT (MODULE MODE)
 import { db, collection, addDoc } from "./firebase.js";
 
+if(typeof emailjs !== "undefined"){
 emailjs.init("88PqxcgG41b24-rym");
+}
 
 document.addEventListener("DOMContentLoaded", function(){
 
