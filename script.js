@@ -235,6 +235,8 @@ const modalImg = document.getElementById("caseImage");
 const modalTitle = document.getElementById("caseTitle");
 const modalCategory = document.getElementById("caseCategory");
 
+const liveProjectBtn = document.getElementById("liveProjectBtn");   
+
 const closeModal = document.getElementById("closeModal");
 
 if(cards.length && modal){
@@ -247,7 +249,10 @@ modal.classList.add("active");
 if(modalImg) modalImg.src = card.dataset.image;
 if(modalTitle) modalTitle.innerText = card.dataset.title;
 if(modalCategory) modalCategory.innerText = card.dataset.category;
-
+   
+if(liveProjectBtn){
+liveProjectBtn.href = card.dataset.link || "#";
+}
 });
 });
 
