@@ -1029,3 +1029,78 @@ transition:0.3s;
 color:#E5C98B; /* lighter gold on hover */
 }
 
+
+/* =========================
+   FEATURED PROJECT
+========================= */
+
+.featured-project{
+position:relative;
+overflow:hidden;
+border:1px solid rgba(212,175,55,0.2);
+box-shadow:0 25px 80px rgba(0,0,0,0.45);
+}
+
+.featured-project::before{
+content:"FEATURED";
+position:absolute;
+top:18px;
+left:18px;
+background:#d4af37;
+color:#000;
+font-size:0.7rem;
+font-weight:600;
+padding:6px 12px;
+letter-spacing:2px;
+z-index:5;
+}
+
+/* =========================
+   CASE FEATURES
+========================= */
+
+.case-features{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+margin-top:25px;
+}
+
+.case-features span{
+padding:10px 18px;
+border:1px solid rgba(212,175,55,0.25);
+background:rgba(212,175,55,0.05);
+font-size:0.75rem;
+letter-spacing:1px;
+text-transform:uppercase;
+color:#d4af37;
+}
+
+/* =========================
+   CASE BUTTONS
+========================= */
+
+.case-buttons{
+display:flex;
+gap:15px;
+margin-top:35px;
+flex-wrap:wrap;
+}
+
+.live-preview-btn{
+padding:15px 28px;
+border:1px solid rgba(212,175,55,0.4);
+background:rgba(212,175,55,0.06);
+color:#d4af37;
+text-decoration:none;
+letter-spacing:1px;
+font-size:0.82rem;
+text-transform:uppercase;
+transition:0.4s ease;
+}
+
+.live-preview-btn:hover{
+background:#d4af37;
+color:#000;
+transform:translateY(-3px);
+}
