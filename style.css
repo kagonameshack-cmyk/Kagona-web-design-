@@ -1136,3 +1136,87 @@ section::after{
 footer::after{
     display:none;
 }
+
+/* =========================
+   CINEMATIC REVEALS
+========================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* DIFFERENT REVEAL SPEEDS */
+
+.reveal-slow {
+  transition-delay: 0.2s;
+}
+
+.reveal-slower {
+  transition-delay: 0.4s;
+}
+
+.reveal-fast {
+  transition-delay: 0s;
+}
+
+
+/* HERO CINEMATIC */
+
+.hero-text h1 {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: heroReveal 1.2s ease forwards;
+}
+
+.hero-text p {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: heroReveal 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(60px);
+  animation: heroReveal 1.2s ease forwards;
+  animation-delay: 0.6s;
+}
+
+.hero-visual img {
+  opacity: 0;
+  transform: scale(1.05);
+  animation: heroImageReveal 1.6s ease forwards;
+  animation-delay: 0.4s;
+}
+
+
+@keyframes heroReveal {
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+@keyframes heroImageReveal {
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+    }
+
