@@ -1104,3 +1104,35 @@ background:#d4af37;
 color:#000;
 transform:translateY(-3px);
 }
+
+/* CINEMATIC SECTION DIVIDERS */
+
+section{
+    position:relative;
+}
+
+section::after{
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:120px;
+    height:1px;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(198,164,108,0.4),
+        transparent
+    );
+    }
+
+footer::after{
+    display:none;
+}
