@@ -291,24 +291,26 @@ navbar.classList.remove("scrolled");
 
 
 /* =========================
-   SCROLL REVEAL
+   CINEMATIC SCROLL REVEAL
 ========================= */
 
 const reveals = document.querySelectorAll(".reveal");
 
-window.addEventListener("scroll", () => {
+function revealOnScroll(){
 
-reveals.forEach(el => {
+  reveals.forEach(el => {
 
-const top = el.getBoundingClientRect().top;
-const windowHeight = window.innerHeight;
+    const windowHeight = window.innerHeight;
+    const revealTop = el.getBoundingClientRect().top;
 
-if(top < windowHeight - 100){
-el.classList.add("active");
+    if(revealTop < windowHeight - 100){
+      el.classList.add("active");
+    }
+
+  });
+
 }
 
-});
+window.addEventListener("scroll", revealOnScroll);
 
-});
-
-});
+revealOnScroll();
